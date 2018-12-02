@@ -6,4 +6,3 @@ vdom
 matplotlib
 scipy
 scikit-learn
-seaborn>=0.8.1
