@@ -6,3 +6,4 @@ vdom
 matplotlib
 scipy
 scikit-learn
+plotly
