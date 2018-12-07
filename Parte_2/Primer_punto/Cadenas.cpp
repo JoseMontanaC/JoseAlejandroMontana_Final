@@ -5,7 +5,7 @@
 #include "omp.h"
 
 double function(double x, double mu, double sigma);
-void Met(double *lista, int N,double mu, double sigma,int thread);
+void Met(double *lista, int N,double mu, double sigma,int thread,int seed);
 
 int main(int argc, char **argv)
 {
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
   for(int i=1;i<=8;i++)
     {
       // printf("voy en el %d \n",i);
-       Met(lista, N, mu, sigma,i);
+      Met(lista, N, mu, sigma,i,i);
     }
  
   
@@ -41,11 +41,11 @@ double function(double x, double mu, double sigma)
 }
 
 
-void Met(double *lista,int N,double mu, double sigma,int thread)
+void Met(double *lista,int N,double mu, double sigma,int thread,int seed)
 {
   FILE *out;
   char filename[128];
-  std::mt19937 generator(1);
+  std::mt19937 generator(seed);
   std::uniform_real_distribution<double> number(0.0,1.0);
   std::normal_distribution<double> Noise(0.0, 1.0);
   double propuesta = 0.0;
