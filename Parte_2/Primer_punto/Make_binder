@@ -1,0 +1,20 @@
+N = 1000
+Mu = 0
+Sigma = 1
+CXX = g++
+CXX_2 = python3
+Flag = -fopenmp
+.PHONY: all
+
+all: todo
+
+todo: output Histogram 
+
+output: main.x
+	./main.x $(N) $(Mu) $(Sigma)
+	rm *.x
+main.x: Cadenas.cpp
+	$(CXX) $(Flag) -o main.x Cadenas.cpp
+
+Histogram:
+	$(CXX_2) Graficas.py
