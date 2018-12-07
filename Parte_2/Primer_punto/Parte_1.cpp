@@ -9,43 +9,34 @@ std::vector<double> metropolis(int N,double mu, double sigma);
 
 int main(int argc, char **argv)
 {
-  int N = atoi(argv[1]);
-  double mu = atof(argv[2]);
-  double sigma = atof(argv[3]);
+  // int N = atoi(argv[1]);
+  // double mu = atof(argv[2]);
+  // double sigma = atof(argv[3]);
+  double mu=0.0;
+  double sigma=1.0;
   std::cout.precision(16);
   std::cout.setf(std::ios::scientific);
+  // Se crean las listas
+  std::vector<double> lista(N);
+  std::vector<double> lista_2(N);
+  std::vector<double> lista_3(N);
+  std::vector<double> lista_4(N);
+  std::vector<double> lista_5(N);
+  std::vector<double> lista_6(N);
+  std::vector<double> lista_7(N);
+  std::vector<double> lista_8(N);
+
+  // llenamos las listas con el algoritmo de metropolis
+  // lista = metropolis(N,mu,sigma);
   
-  // std::vector<double> lista(N);
+ 
   
-  double lista[N];
-  // Inicializar
-  for (int ii = 0; ii < N; ii++) {
-    lista[ii]=0.0; 
-  }
-  // for (int ii = 0; ii < N; ii++) {
-  //   std::cout<<lista[ii]<<std::endl; 
-  //  }
-  
-  Met(lista, N, mu, sigma);
-  
-  // We print only the 80% of the list
-  int length = N*0.8;
-  std::vector<double> distribution(length);
-  for(int ii= N-length ;ii<N; ii++)
-    {
-      distribution[ii-N+length] = lista[ii];
-      std::cout<<distribution[ii-N+length]<<std::endl;
-      // printf("%.16f \n",distribution[ii-N+length]);
-    }
-  
-  // for (int ii = 0; ii < N; ii++) {
-  //  std::cout<<lista[ii]<<std::endl; 
-  // }
+ 
   
   // We print only the 80% of the list
 
   
-  // lista = metropolis(N,mu,sigma);
+  
   // double *ptr[N];
   // for (int ii = 0; ii < N; ii++) {
   //     ptr[ii] = &lista[ii]; // assign the address of integer.
